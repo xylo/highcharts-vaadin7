@@ -12,9 +12,10 @@ Official releases of this add-on are available at Vaadin Directory. For Maven in
 
 ## Download the source code
 
-git clone https://github.com/xylo/highcharts-vaadin7.git
+	git clone https://github.com/xylo/highcharts-vaadin7.git
+	cd highcharts-vaadin7
 
-## Building and running the demo in a standalone jetty
+## Building and running the demo in a standalone jetty server
 
 	mvn clean install
 	cd highcharts-demo
@@ -33,10 +34,18 @@ For further development of this add-on, I recommend using Intellij IDEA and the 
 		scripts/copyResources.sh
 
 - install Tomcat and Intellij IDEA if not already done
-- create a symlink in Tomcat's webapp directory to the tomcat-wepapp symlink in the root directory your local copy of this add-on
+- create a symlink in Tomcat's webapp directory to the ${SRC_DIR}/tomcat-wepapp
 - restart tomcat and test the webapp
+- start IDEA and chose ***File*** -> ***Import Project...***
+  - select the directory of your local copy of this project
+  - choose import from maven
+- after importing the project copy the file scipts/settings.example.conf to scripts/settings.conf
+- adapt scripts/settings.conf to the specifics of your system
+- open the class `ReloadWebapp`, right click on it and choose ***Run 'ReloadWebapp.main()***
 
 ## Development with Eclipse
+
+Development with Eclipse has not been tested.  Read the following at your own risk.
 
 For further development of this add-on with Eclipse, you might want to use:
 - m2e wtp plug-in (install it from Eclipse Marketplace)
@@ -68,13 +77,12 @@ Another way of debugging client-side is superdev mode. To enable it, uncomment d
 ## Release notes
 
 ### Version 1.0-SNAPSHOT
-- ...
-- ...
+- initial version of the Highcharts wrapper for Vaadin 7
 
 ## Roadmap
 
-This component is developed as a hobby with no public roadmap or any guarantees of upcoming releases. That said, the following features are planned for upcoming releases:
-- ...
+This component is developed as a hobby with no public roadmap or any guarantees of upcoming releases.
+That said, the following features are planned for upcoming releases:
 - ...
 
 ## Issue tracking
@@ -95,7 +103,7 @@ Contributions are welcome, but there are no guarantees that they are accepted as
 
 Add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-MyComponent is written by <...>
+Highcharts for Vaadin7 is written by Stefan Endrullis.
 
 # Developer Guide
 
@@ -105,7 +113,7 @@ Here is a simple example on how to try out the add-on component:
 
 <...>
 
-For a more comprehensive example, see src/test/java/org/vaadin/template/demo/DemoUI.java
+For a more comprehensive example, see highcharts-demo/src/main/java/org/vaadin/highcharts/demo/DemoUI.java
 
 ## Features
 
