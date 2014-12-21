@@ -6,7 +6,7 @@
 	<artifactId>highcharts</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Highcharts add-on for Vaadin 7</name>
+	<name>Highcharts for Vaadin 7</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -6,7 +6,7 @@
 	<artifactId>highcharts-demo</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>Highcharts add-on for Vaadin 7 Demo</name>
+	<name>Highcharts for Vaadin 7 Demo</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
