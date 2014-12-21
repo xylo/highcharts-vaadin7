@@ -10,7 +10,7 @@ import org.vaadin.highcharts.AbstractHighChart;
  *
  * @author Stefan Endrullis
  */
-@JavaScript({"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", "http://code.highcharts.com/highcharts.js"})
+@JavaScript({"https://code.jquery.com/jquery-1.7.1.min.js", "https://code.highcharts.com/highcharts.js"})
 public class HighChart extends AbstractHighChart {
 	private static final long serialVersionUID = -7326315426217377753L;
 }
