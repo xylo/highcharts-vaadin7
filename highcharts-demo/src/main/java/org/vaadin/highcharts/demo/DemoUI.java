@@ -8,6 +8,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 import org.vaadin.aceeditor.AceEditor;
 import org.vaadin.aceeditor.AceMode;
+import org.vaadin.highcharts.HighChart;
 
 import javax.servlet.annotation.WebServlet;
 import java.util.Scanner;

@@ -1,30 +1,29 @@
 package org.vaadin.highcharts;
 
-import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 
 /**
  * Abstract Highcharts chart.
  *
- * Inherit a subclass from this abstract class and add a proper JavaScript annotation to it in order to load all
- * necessary JavaScript libraries that you need (e.g. jquery.js, highcharts.js, highcharts-more.js, ...).
+ * Download jquery and highcharts.js (if not already loaded in your webapp) and save them in the resource directory org/vaadin/highcharts.
+ * Create a new class in the package org.vaadin.highcharts (e.g. "HighChart") and inherit it from AbstractHighChart.
+ * Then add a proper JavaScript annotation to the newly created class in order to load all necessary JavaScript
+ * libraries that you need (e.g. jquery.js, highcharts.js, highcharts-more.js, ...).
  * Make sure your project complies with the licenses of those libraries.
+ * At the end of this list add "highcharts-connector.js".
  *
  * <p>Example of how to extend <code>AbstractHighChart</code>:</p>
  * <pre>
- * {@literal @}JavaScript({"https://code.jquery.com/jquery-1.7.1.min.js", "https://code.highcharts.com/highcharts.js"})
+ * package org.vaadin.highcharts;
+ *
+ * {@literal @}JavaScript({"jquery-min.js", "highcharts.js", "highcharts-connector.js"})
  * public class HighChart extends AbstractHighChart {
  *	private static final long serialVersionUID = -7326315426217377753L;
  * }
  * </pre>
  *
- * Instead of linking the JS files via URLs you can also download the JS files to the package where your sub class of
- * <code>AbstractHighChart</code> is located.  In this case just use the file names of the JS files when loading them
- * via the JavaScript annotation.
- *
  * @author Stefan Endrullis
  */
-@JavaScript({"highcharts-connector.js"})
 public abstract class AbstractHighChart extends AbstractJavaScriptComponent {
 	private static final long serialVersionUID = 7738496276049495017L;
 
