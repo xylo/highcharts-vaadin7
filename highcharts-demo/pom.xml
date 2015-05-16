@@ -10,7 +10,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.3.7</vaadin.version>
+		<vhighcharts.version>1.0-SNAPSHOT</vhighcharts.version>
+		<vaadin.version>7.4.6</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<jetty.port>8081</jetty.port>
 	</properties>
@@ -80,7 +81,7 @@
 		<dependency>
 			<groupId>org.vaadin.highcharts</groupId>
 			<artifactId>highcharts</artifactId>
-			<version>${version}</version>
+			<version>${vhighcharts.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
