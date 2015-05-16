@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd `dirname $0`
-. settings.conf
+. userSettings.conf
 
 curl --user "$TOMCAT_USERNAME:$TOMCAT_PASSWORD" "$TOMCAT_MANAGER_URL/reload?path=/$WEBAPP_NAME" >/dev/null
 
@@ -11,4 +11,4 @@ else
 	curl "$1" >/dev/null
 fi
 
-notify-send "$PROJECT_NAME" reloaded
+notify-send "$WEBAPP_NAME" reloaded

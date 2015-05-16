@@ -1,14 +1,15 @@
 # Highcharts Add-on for Vaadin 7
 
-This project wraps the JavaScript library ... for use with Vaadin 7.
+This project wraps the JavaScript library [highcharts](http://www.highcharts.com/) for use with Vaadin 7.
 
 ## Online demo
 
-Try the add-on demo at <url of the online demo>
+Try the add-on demo at [https://endrullis.de/highcharts-vaadin7/](https://endrullis.de/highcharts-vaadin7/).
 
 ## Download release
 
-Official releases of this add-on are available at Vaadin Directory. For Maven instructions, download and reviews, go to http://vaadin.com/addon/highcharts-vaadin7
+Official releases of this add-on are available at Vaadin Directory.
+For Maven instructions, download and reviews, go to [http://vaadin.com/addon/highcharts-vaadin7](http://vaadin.com/addon/highcharts-vaadin7).
 
 ## Download the source code
 

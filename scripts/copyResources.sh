@@ -1,11 +1,14 @@
 #!/bin/bash
 
 cd `dirname $0`
-. settings.conf
+. generalSettings.conf
 cd ..
 
-cp -Rf highcharts/src/main/resources/* tomcat-webapp/WEB-INF/classes/
-cp -Rf highcharts-demo/src/main/resources/* tomcat-webapp/WEB-INF/classes/
+WEB_DIR_PATH=$DEMO_PROJECT_NAME/target/$DEMO_PROJECT_NAME-$DEMO_PROJECT_VERSION
+
+cp -Rf $PROJECT_NAME/src/main/resources/* $WEB_DIR_PATH/WEB-INF/classes/
+cp -Rf $DEMO_PROJECT_NAME/src/main/resources/* $WEB_DIR_PATH/WEB-INF/classes/
+cp -Rf $DEMO_PROJECT_NAME/src/main/webapp/* $WEB_DIR_PATH/
 
 # copy content of webapp directory
-#cp -Rf src/main/webapp/VAADIN/* tomcat-webapp/VAADIN/
+#cp -Rf src/main/webapp/VAADIN/* $WEB_DIR_PATH/VAADIN/
