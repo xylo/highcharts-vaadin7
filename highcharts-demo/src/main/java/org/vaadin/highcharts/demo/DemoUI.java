@@ -32,16 +32,18 @@ public class DemoUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		final AceEditor textArea = new AceEditor();
-		textArea.setSizeFull();
-		textArea.setCaption("Chart Code");
-		textArea.setMode(AceMode.javascript);
-		textArea.setValue(INITIAL_HCJS);
-		textArea.setImmediate(true);
+		final AceEditor textArea = new AceEditor() {{
+			setSizeFull();
+			setCaption("Chart Code");
+			setMode(AceMode.javascript);
+			setValue(INITIAL_HCJS);
+			setImmediate(true);
+		}};
 
-		final HighChart chart = new HighChart();
-		chart.setSizeFull();
-		chart.setHcjs(textArea.getValue());
+		final HighChart chart = new HighChart() {{
+			setSizeFull();
+			setHcjs(textArea.getValue());
+		}};
 
 		textArea.addTextChangeListener(new FieldEvents.TextChangeListener() {
 			@Override
