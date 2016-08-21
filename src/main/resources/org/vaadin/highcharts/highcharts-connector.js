@@ -5,6 +5,8 @@ window.org_vaadin_highcharts_AbstractHighChart = function () {
 		var domId = this.getState().domId;
 		var hcjs = this.getState().hcjs;
 
+		var connector = this;
+
 		// evaluate highcharts JS which needs to define var "options"
 		eval(hcjs);
 
