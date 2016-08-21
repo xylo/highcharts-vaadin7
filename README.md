@@ -24,55 +24,20 @@ For Maven instructions, download and reviews, go to [http://vaadin.com/addon/hig
 
 To see the demo, navigate to http://localhost:8081/
 
-## Development with Intellij IDEA
+## Development instructions 
 
-For further development of this add-on, I recommend using Intellij IDEA and the following tool-chain:
+1. Import to your favourite IDE
+2. Run main method of the Server class to launch embedded web server that lists all your test UIs at http://localhost:9998
+3. Code and test
+   * create UI's for various use cases for your add-ons, see examples. These can also work as usage examples for your add-on users.
+   * create browser level and integration tests under src/test/java/
+   * Browser level tests are executed manually from IDE (JUnit case) or with Maven profile "browsertests" (mvn verify -Pbrowsertests). If you have a setup for solidly working Selenium driver(s), consider enabling that profile by default.
+4. Test also in real world projects, e.g. create a demo project, build a snapshot release ("mvn install") and use the snapshot build in it.
 
-- run the following commands:
+## Creating releases
 
-		mvn clean package
-		scripts/linkClasses.sh
-		scripts/copyResources.sh
-
-- install Tomcat and Intellij IDEA if not already done
-- create a symlink in Tomcat's webapp directory to the ${SRC_DIR}/tomcat-wepapp
-- restart tomcat and test the webapp
-- start IDEA and chose ***File*** -> ***Import Project...***
-  - select the directory of your local copy of this project
-  - choose import from maven
-- after importing the project copy the file scipts/settings.example.conf to scripts/settings.conf
-- adapt scripts/settings.conf to the specifics of your system
-- open the class `ReloadWebapp`, right click on it and choose ***Run 'ReloadWebapp.main()***
-
-## Development with Eclipse
-
-Development with Eclipse has not been tested.  Read the following at your own risk.
-
-For further development of this add-on with Eclipse, you might want to use:
-- m2e wtp plug-in (install it from Eclipse Marketplace)
-- Vaadin Eclipse plug-in (install it from Eclipse Marketplace)
-- JRebel Eclipse plug-in (install it from Eclipse Marketplace)
-- Chrome browser
-
-### Importing project
-
-Choose File > Import... > Existing Maven Projects
-
-Note that Eclipse may give "Plugin execution not covered by lifecycle configuration" errors for pom.xml. Use "Permanently mark goal resources in pom.xml as ignored in Eclipse build" quick-fix to mark these errors as permanently ignored in your project. Do not worry, the project still works fine. 
-
-### Debugging server-side
-
-If you have not already compiled the widgetset, do it now by running vaadin:install Maven target for highcharts-root project.
-
-If you have a JRebel license, it makes on the fly code changes faster. Just add JRebel nature to your highcharts-demo project by clicking project with right mouse button and choosing JRebel > Add JRebel Nature
-
-To debug project and make code modifications on the fly in the server-side, right-click the highcharts-demo project and choose Debug As > Debug on Server. Navigate to http://localhost:8080/highcharts-demo/ to see the application.
-
-### Debugging client-side
-
-The most common way of debugging and making changes to the client-side code is dev-mode. To create debug configuration for it, open highcharts-demo project properties and click "Create Development Mode Launch" button on the Vaadin tab. Right-click newly added "GWT development mode for highcharts-demo.launch" and choose Debug As > Debug Configurations... Open up Classpath tab for the development mode configuration and choose User Entries. Click Advanced... and select Add Folders. Choose Java and Resources under highcharts/src/main and click ok. Now you are ready to start debugging the client-side code by clicking debug. Click Launch Default Browser button in the GWT Development Mode in the launched application. Now you can modify and breakpoints to client-side classes and see changes by reloading the web page. 
-
-Another way of debugging client-side is superdev mode. To enable it, uncomment devModeRedirectEnabled line from the end of DemoWidgetSet.gwt.xml located under highcharts-demo resources folder and compile the widgetset once by running vaadin:compile Maven target for highcharts-demo. Refresh highcharts-demo project resources by right clicking the project and choosing Refresh. Click "Create SuperDevMode Launch" button on the Vaadin tab of the highcharts-demo project properties panel to create superder mode code server launch configuration and modify the class path as instructed above. After starting the code server by running SuperDevMode launch as Java application, you can navigate to http://localhost:8080/highcharts-demo/?superdevmode. Now all code changes you do to your client side will get compiled as soon as you reload the web page. You can also access Java-sources and set breakpoints inside Chrome if you enable source maps from inspector settings. 
+1. Use Maven release plugin (mvn release:prepare; mvn release:perform)
+2. Upload the ZIP file generated to target/checkout/target directory to https://vaadin.com/directory service (and/or optionally publish your add-on to Maven central)
 
  
 ## Release notes
@@ -83,8 +48,6 @@ Another way of debugging client-side is superdev mode. To enable it, uncomment d
 ## Roadmap
 
 This component is developed as a hobby with no public roadmap or any guarantees of upcoming releases.
-That said, the following features are planned for upcoming releases:
-- ...
 
 ## Issue tracking
 
@@ -106,6 +69,7 @@ Add-on is distributed under Apache License 2.0. For license terms, see LICENSE.t
 
 Highcharts for Vaadin7 is written by Stefan Endrullis.
 
+<!--
 # Developer Guide
 
 ## Getting started
@@ -133,3 +97,4 @@ For a more comprehensive example, see highcharts-demo/src/main/java/org/vaadin/h
 ## API
 
 MyComponent JavaDoc is available online at <...>
+-->
