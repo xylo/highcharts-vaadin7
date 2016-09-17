@@ -297,6 +297,31 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 		</profile>
+
+		<profile>
+			<id>demo</id>
+			<build>
+				<plugins>
+					<!-- Run test webapp in jetty. -->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.5.0</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>java</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>org.vaadin.highcharts.uiserver.Server</mainClass>
+							<classpathScope>test</classpathScope>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
 
 </project>

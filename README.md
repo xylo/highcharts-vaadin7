@@ -18,21 +18,20 @@ For Maven instructions, download and reviews, go to [http://vaadin.com/addon/hig
 
 ## Building and running the demo in a standalone jetty server
 
-	mvn clean install
-	cd highcharts-demo
-	mvn jetty:run
+	mvn package
+	mvn -Pdemo exec:java
 
-To see the demo, navigate to http://localhost:8081/
+To see the demo, navigate to http://localhost:9998/
 
 ## Development instructions 
 
 1. Import to your favourite IDE
-2. Run main method of the Server class to launch embedded web server that lists all your test UIs at http://localhost:9998
+2. Run the `main` method of the `Server` class (`org.vaadin.highcharts.uiserver.Server`) to launch embedded web server that lists all your test UIs at `http://localhost:9998`
 3. Code and test
    * create UI's for various use cases for your add-ons, see examples. These can also work as usage examples for your add-on users.
    * create browser level and integration tests under src/test/java/
-   * Browser level tests are executed manually from IDE (JUnit case) or with Maven profile "browsertests" (mvn verify -Pbrowsertests). If you have a setup for solidly working Selenium driver(s), consider enabling that profile by default.
-4. Test also in real world projects, e.g. create a demo project, build a snapshot release ("mvn install") and use the snapshot build in it.
+   * Browser level tests are executed manually from IDE (JUnit case) or with Maven profile `browsertests` (`mvn verify -Pbrowsertests`). If you have a setup for solidly working Selenium driver(s), consider enabling that profile by default.
+4. Test also in real world projects, e.g. create a demo project, build a snapshot release (`mvn install`) and use the snapshot build in it.
 
 ## Creating releases
 
@@ -42,8 +41,15 @@ To see the demo, navigate to http://localhost:8081/
  
 ## Release notes
 
-### Version 1.0-SNAPSHOT
+### Version 1.0
 - initial version of the Highcharts wrapper for Vaadin 7
+
+### Version 1.1
+- minor changes
+
+### Version 1.2
+- added function `manipulateChart` for manipulating charts dynamically
+- restructured the whole project (from multi-module to single-module)
 
 ## Roadmap
 
