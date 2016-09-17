@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.vaadin.highcharts</groupId>
 	<artifactId>highcharts</artifactId>
-	<version>1.2</version>
+	<version>1.3-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<name>Highcharts for Vaadin 7</name>
 
@@ -39,7 +39,7 @@
 		<url>git://github.com/xylo/highcharts-vaadin7.git</url>
 		<connection>scm:git:git://github.com/xylo/highcharts-vaadin7.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/xylo/highcharts-vaadin7.git</developerConnection>
-	  <tag>highcharts-1.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<issueManagement>
