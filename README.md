@@ -16,10 +16,13 @@ For Maven instructions, download and reviews, go to [https://vaadin.com/addon/hi
 ## How to use it
 
 1. Download jquery and `highcharts.js` (if not already loaded in your webapp) and save them in the resource directory `org/vaadin/highcharts`.
+
 2. Create a new class in the package `org.vaadin.highcharts` (e.g. `HighChart`) and inherit it from `AbstractHighChart`.
+
 3. Add a proper `@JavaScript` annotation to the newly created class in order to load all necessary JavaScript libraries that
    you need (e.g. `jquery.js`, `highcharts.js`, `highcharts-more.js`, ...). Make sure your project complies with the licenses of those libraries.
    At the end of this list add "highcharts-connector.js".  Here is an example:
+
 	```java
 	package org.vaadin.highcharts;
 	
@@ -28,7 +31,9 @@ For Maven instructions, download and reviews, go to [https://vaadin.com/addon/hi
 	    private static final long serialVersionUID = -7326315426217377753L;
 	}
 	```
+
 4. Instantiate a HighChart object, set the chart code, and add it to the layout of your UI:
+
 	```java
 	// Create and configure a chart.
 	HighChart chart = new HighChart();
