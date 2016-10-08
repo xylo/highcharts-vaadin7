@@ -51,6 +51,9 @@ To see the demo, navigate to http://localhost:9998/
 - added function `manipulateChart` for manipulating charts dynamically
 - restructured the whole project (from multi-module to single-module)
 
+### Version 1.3
+- added support for stock charts
+
 ## Roadmap
 
 This component is developed as a hobby with no public roadmap or any guarantees of upcoming releases.
