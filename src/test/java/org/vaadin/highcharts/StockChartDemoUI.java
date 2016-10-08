@@ -5,10 +5,7 @@ import com.vaadin.event.FieldEvents;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.JavaScriptFunction;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
-import elemental.json.JsonArray;
 import org.vaadin.aceeditor.AceEditor;
 import org.vaadin.aceeditor.AceMode;
 
@@ -23,29 +20,30 @@ import java.util.Scanner;
  * @author Stefan Endrullis
  */
 @SuppressWarnings("serial")
-public class DemoUI extends UI {
+public class StockChartDemoUI extends UI {
 
-	public static final String INITIAL_HCJS = new Scanner(DemoUI.class.getResourceAsStream("highchartsExampleCode.js"), "UTF-8").useDelimiter("\\A").next();
+	public static final String INITIAL_HCJS = new Scanner(StockChartDemoUI.class.getResourceAsStream("stockchartExampleCode.js"), "UTF-8").useDelimiter("\\A").next();
 
 	@WebServlet(value = "/*", asyncSupported = true)
-	@VaadinServletConfiguration(productionMode = false, ui = DemoUI.class, widgetset = "org.vaadin.highcharts.DemoWidgetset")
+	@VaadinServletConfiguration(productionMode = false, ui = StockChartDemoUI.class, widgetset = "org.vaadin.highcharts.DemoWidgetset")
 	public static class Servlet extends VaadinServlet {
 	}
 
 	@Override
 	protected void init(VaadinRequest request) {
 		final AceEditor chartCodeField = new AceEditor() {{
-			setCaption("Chart Code");
+			setCaption("Stock Chart Code");
 			setSizeFull();
 			setMode(AceMode.javascript);
 			setValue(INITIAL_HCJS);
 			setImmediate(true);
 		}};
 
-		final HighChart chart = new HighChart() {{
+		final StockChart chart = new StockChart() {{
 			setSizeFull();
 			setHcjs(chartCodeField.getValue());
 
+			/*
 			addFunction("onClick", new JavaScriptFunction() {
 				@Override
 				public void call(JsonArray args) {
@@ -59,6 +57,7 @@ public class DemoUI extends UI {
 					);
 				}
 			});
+			*/
 		}};
 
 		chartCodeField.addTextChangeListener(new FieldEvents.TextChangeListener() {

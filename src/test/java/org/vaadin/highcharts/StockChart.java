@@ -10,7 +10,7 @@ import com.vaadin.annotations.JavaScript;
  *
  * @author Stefan Endrullis
  */
-@JavaScript({"jquery-1.7.1.min.js", "highcharts.js", "highcharts-connector.js"})
-public class HighChart extends AbstractHighChart {
-	private static final long serialVersionUID = -7326315426217377754L;
+@JavaScript({"jquery-1.7.1.min.js", "highstock.js", "highcharts-connector.js"})
+public class StockChart extends AbstractHighChart {
+	private static final long serialVersionUID = -7326315426217377755L;
 }

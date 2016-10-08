@@ -11,7 +11,11 @@ window.org_vaadin_highcharts_AbstractHighChart = function () {
 		eval(hcjs);
 
 		// set chart context
-		$('#' + domId).highcharts(options)
+		if (typeof chartType === 'undefined' || chartType == 'HighChart') {
+			$('#' + domId).highcharts(options);
+		} else {
+			$('#' + domId).highcharts(chartType, options);
+		}
 	};
 
 };
