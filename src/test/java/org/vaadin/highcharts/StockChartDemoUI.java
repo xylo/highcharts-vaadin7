@@ -24,7 +24,7 @@ public class StockChartDemoUI extends UI {
 
 	public static final String INITIAL_HCJS = new Scanner(StockChartDemoUI.class.getResourceAsStream("stockchartExampleCode.js"), "UTF-8").useDelimiter("\\A").next();
 
-	@WebServlet(value = "/*", asyncSupported = true)
+	@WebServlet(value = "/stockchart/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = StockChartDemoUI.class, widgetset = "org.vaadin.highcharts.DemoWidgetset")
 	public static class Servlet extends VaadinServlet {
 	}
