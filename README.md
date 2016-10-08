@@ -4,12 +4,37 @@ This project wraps the JavaScript library [highcharts](http://www.highcharts.com
 
 ## Online demo
 
-Try the add-on demo at [https://endrullis.de/highcharts-vaadin7/](https://endrullis.de/highcharts-vaadin7/).
+Try one of the add-on demos:
+* [Demo with HighChart](https://endrullis.de/highcharts-vaadin7/).
+* [Demo with StockChart](https://endrullis.de/highcharts-vaadin7/stockchart).
 
 ## Download release
 
 Official releases of this add-on are available at Vaadin Directory.
-For Maven instructions, download and reviews, go to [http://vaadin.com/addon/highcharts-vaadin7](http://vaadin.com/addon/highcharts-vaadin7).
+For Maven instructions, download and reviews, go to [https://vaadin.com/addon/highcharts-for-vaadin-7](https://vaadin.com/addon/highcharts-for-vaadin-7).
+
+## How to use it
+
+1. Download jquery and `highcharts.js` (if not already loaded in your webapp) and save them in the resource directory `org/vaadin/highcharts`.
+2. Create a new class in the package `org.vaadin.highcharts` (e.g. `HighChart`) and inherit it from `AbstractHighChart`.
+3. Add a proper `@JavaScript` annotation to the newly created class in order to load all necessary JavaScript libraries that
+   you need (e.g. `jquery.js`, `highcharts.js`, `highcharts-more.js`, ...). Make sure your project complies with the licenses of those libraries.
+   At the end of this list add "highcharts-connector.js".  Here is an example:
+	```java
+	package org.vaadin.highcharts;
+	
+	@JavaScript({"jquery-min.js", "highcharts.js", "highcharts-connector.js"})
+	public class HighChart extends AbstractHighChart {
+	    private static final long serialVersionUID = -7326315426217377753L;
+	}
+	```
+4. Instantiate a HighChart object, set the chart code, and add it to the layout of your UI:
+	```java
+	// Create and configure a chart.
+	HighChart chart = new HighChart();
+	chart.setHcjs("var options = { title: { text: 'test diagram' }, series: [{ name: 's1', data: [1, 3, 2]}] };")
+	someLayout.add(chart)
+	```
 
 ## Download the source code
 
