@@ -27,7 +27,7 @@ public class HighChartDemoUI extends UI {
 
 	public static final String INITIAL_HCJS = new Scanner(HighChartDemoUI.class.getResourceAsStream("highchartsExampleCode.js"), "UTF-8").useDelimiter("\\A").next();
 
-	@WebServlet(value = "/*", asyncSupported = true)
+	@WebServlet(value = "/highchart/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = HighChartDemoUI.class, widgetset = "org.vaadin.highcharts.DemoWidgetset")
 	public static class Servlet extends VaadinServlet {
 	}

@@ -13,10 +13,12 @@ import java.util.Date;
 public class ReloadWebapp {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
+		/*
 		Process process = Runtime.getRuntime().exec("scripts/copyResources.sh");
 		if (process.waitFor() != 0) {
 			throw new IOException("Return code not 0");
 		}
+		*/
 
 		Process process2 = Runtime.getRuntime().exec("scripts/reloadTomcatWebapp.sh");
 		if (process2.waitFor() != 0) {
