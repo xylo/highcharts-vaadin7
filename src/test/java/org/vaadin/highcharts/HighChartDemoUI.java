@@ -1,16 +1,10 @@
 package org.vaadin.highcharts;
 
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.event.FieldEvents;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.JavaScriptFunction;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.UI;
+import com.vaadin.ui.*;
 import elemental.json.JsonArray;
-import org.vaadin.aceeditor.AceEditor;
-import org.vaadin.aceeditor.AceMode;
 
 import javax.servlet.annotation.WebServlet;
 import java.util.Scanner;
@@ -34,12 +28,10 @@ public class HighChartDemoUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		final AceEditor chartCodeField = new AceEditor() {{
+		final TextArea chartCodeField = new TextArea() {{
 			setCaption("Chart Code");
 			setSizeFull();
-			setMode(AceMode.javascript);
 			setValue(INITIAL_HCJS);
-			setImmediate(true);
 		}};
 
 		final HighChart chart = new HighChart() {{
@@ -61,12 +53,7 @@ public class HighChartDemoUI extends UI {
 			});
 		}};
 
-		chartCodeField.addTextChangeListener(new FieldEvents.TextChangeListener() {
-			@Override
-			public void textChange(FieldEvents.TextChangeEvent event) {
-				chart.setHcjs(event.getText());
-			}
-		});
+		chartCodeField.addValueChangeListener(e -> chart.setHcjs(e.getValue()));
 
 		HorizontalLayout horizontalLayout = new HorizontalLayout() {{
 			setSizeFull();

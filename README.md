@@ -1,6 +1,6 @@
-# Highcharts Add-on for Vaadin 7
+# Highcharts Add-on for Vaadin 7+
 
-This project wraps the JavaScript library [highcharts](http://www.highcharts.com/) for use with Vaadin 7.
+This project wraps the JavaScript library [highcharts](http://www.highcharts.com/) for use with Vaadin 7 and 8.
 
 ## Online demo
 
@@ -71,18 +71,21 @@ To see the demo, navigate to http://localhost:9998/
  
 ## Release notes
 
-### Version 1.0
-- initial version of the Highcharts wrapper for Vaadin 7
+### Version 2.0
+- made add-on compatible with vaadin 8
 
-### Version 1.1
-- minor changes
+### Version 1.3
+- added support for stock charts
 
 ### Version 1.2
 - added function `manipulateChart` for manipulating charts dynamically
 - restructured the whole project (from multi-module to single-module)
 
-### Version 1.3
-- added support for stock charts
+### Version 1.1
+- minor changes
+
+### Version 1.0
+- initial version of the Highcharts wrapper for Vaadin 7
 
 ## Roadmap
 
@@ -106,7 +109,7 @@ Contributions are welcome, but there are no guarantees that they are accepted as
 
 Add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-Highcharts for Vaadin7 is written by Stefan Endrullis.
+Highcharts for Vaadin 7+ is written by Stefan Endrullis.
 
 <!--
 # Developer Guide
