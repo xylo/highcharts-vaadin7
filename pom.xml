@@ -5,7 +5,7 @@
 	<artifactId>highcharts</artifactId>
 	<version>2.0-SNAPSHOT</version>
 	<packaging>${packaging.type}</packaging>
-	<name>Highcharts for Vaadin 7</name>
+	<name>Highcharts for Vaadin 7+</name>
 
 	<organization>
 		<name>Vaadin Community</name>
