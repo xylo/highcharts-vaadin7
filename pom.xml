@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.vaadin.highcharts</groupId>
 	<artifactId>highcharts</artifactId>
-	<version>2.0-SNAPSHOT</version>
+	<version>2.0</version>
 	<packaging>${packaging.type}</packaging>
 	<name>Highcharts for Vaadin 7+</name>
 
@@ -40,7 +39,7 @@
 		<url>https://github.com/xylo/highcharts-vaadin7</url>
 		<connection>scm:git:git://github.com/xylo/highcharts-vaadin7.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/xylo/highcharts-vaadin7.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>highcharts-2.0</tag>
 	</scm>
 
 	<issueManagement>
@@ -227,7 +226,7 @@
 									<arguments>
 										<argument>-Xmx2g</argument>
 										<argument>-classpath</argument>
-										<classpath/>
+										<classpath />
 										<argument>com.google.gwt.dev.Compiler</argument>
 										<argument>-war</argument>
 										<argument>target/testwebapp/VAADIN/widgetsets</argument>
