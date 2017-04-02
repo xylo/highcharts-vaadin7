@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>8.0.2</vaadin.version>
+		<vaadin.version>8.0.5</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 
 		<!-- ZIP Manifest fields -->
@@ -206,7 +206,7 @@
 						<artifactId>maven-release-plugin</artifactId>
 						<version>2.5.3</version>
 						<configuration>
-							<releaseProfiles>directorypackage</releaseProfiles>
+							<releaseProfiles>default,directorypackage</releaseProfiles>
 						</configuration>
 					</plugin>
 
