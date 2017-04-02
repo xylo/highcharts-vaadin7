@@ -240,6 +240,10 @@
 
 		<profile>
 			<id>directorypackage</id>
+			<properties>
+				<packaging.type>jar</packaging.type>
+				<demo.dependency.scope>test</demo.dependency.scope>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
