@@ -4,6 +4,8 @@
 	<!-- WS Compiler: manually edited -->
 	<inherits name="com.vaadin.DefaultWidgetSet" />
 
+	<inherits name="org.vaadin.aceeditor.AceEditorWidgetSet"/>
+
 	<set-configuration-property name="devModeRedirectEnabled" value="true" />
 	
 	<source path="client/"></source>

@@ -4,8 +4,9 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.TextArea;
 import com.vaadin.ui.UI;
+import org.vaadin.aceeditor.AceEditor;
+import org.vaadin.aceeditor.AceMode;
 
 import javax.servlet.annotation.WebServlet;
 import java.util.Scanner;
@@ -29,9 +30,10 @@ public class StockChartDemoUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		final TextArea chartCodeField = new TextArea() {{
+		final AceEditor chartCodeField = new AceEditor() {{
 			setCaption("Chart Code");
 			setSizeFull();
+			setMode(AceMode.javascript);
 			setValue(INITIAL_HCJS);
 		}};
 

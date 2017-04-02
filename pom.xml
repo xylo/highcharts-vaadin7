@@ -82,14 +82,12 @@
 		</dependency>
 
 		<!-- AceEditor add-on. -->
-		<!--
 		<dependency>
 			<groupId>org.vaadin.addons</groupId>
 			<artifactId>aceeditor</artifactId>
-			<version>0.8.14</version>
+			<version>0.8.15</version>
 			<scope>${demo.dependency.scope}</scope>
 		</dependency>
-		-->
 
 		<!-- compiler module contains GWT compiler, run manually with exec plugin -->
 		<dependency>
